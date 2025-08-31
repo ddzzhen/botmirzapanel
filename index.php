@@ -238,7 +238,7 @@ if (floor($TimeLastMessage / 60) >= 1) {
     if ($setting['Bot_Status'] == "✅  机器人已开启" and !in_array($from_id, $admin_ids)) {
         sendmessage($from_id, $textbotlang['users']['updatingbot'], null, 'html');
         foreach ($admin_ids as $admin) {
-            sendmessage($admin, "❌ ادمین عزیز ربات فعال نیست جهت فعالسازی به منوی تنظیمات عمومی > وضعیت قابلیت ها بروید تا رباتتان فعال شود.", null, 'html');
+            sendmessage($admin, "❌ 尊敬的管理员，机器人尚未激活。要激活它，请转到常规设置 > 功能状态菜单来激活您的机器人。", null, 'html');
         }
         return;
     }
