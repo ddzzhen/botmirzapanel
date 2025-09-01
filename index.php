@@ -1111,7 +1111,7 @@ if (preg_match('/subscriptionurl_(\w+)/', $datain, $dataget)) {
         ]
     ]);
     $priceproductformat = number_format($product['price_product']);
-    $balanceformatsell = number_format(select("user", "Balance", "id", $from_id, "select")['Balance']);
+    $balanceformatsell = number_format(select("user", "Balance", "id", $from_id, "select")['Balance'],2);
     update("invoice", "Status", "active", "id_invoice", $nameloc['id_invoice']);
     sendmessage($from_id, $textbotlang['users']['extend']['thanks'], $keyboardextendfnished, 'HTML');
     $text_report = sprintf($textbotlang['Admin']['Report']['extend'], $from_id, $username, $product['name_product'], $priceproductformat, $usernamepanel, $balanceformatsell, $nameloc['Service_location']);
@@ -1152,14 +1152,14 @@ if (preg_match('/subscriptionurl_(\w+)/', $datain, $dataget)) {
     sendmessage($from_id, sprintf($textbotlang['users']['Extra_volume']['VolumeValue'], $setting['Extra_volume']), $backuser, 'HTML');
     step('getvolumeextra', $from_id);
 } elseif ($user['step'] == "getvolumeextra") {
-    if (!ctype_digit($text)) {
+    if (!is_numeric($text)) {
         sendmessage($from_id, $textbotlang['Admin']['Product']['Invalidvolume'], $backuser, 'HTML');
         return;
     }
-    if ($text < 1) {
-        sendmessage($from_id, $textbotlang['users']['Extra_volume']['invalidprice'], $backuser, 'HTML');
-        return;
-    }
+    // if ($text < 1) {
+    //     sendmessage($from_id, $textbotlang['users']['Extra_volume']['invalidprice'], $backuser, 'HTML');
+    //     return;
+    // }
     $priceextra = $text;
     $keyboardsetting = json_encode([
         'inline_keyboard' => [
@@ -1580,7 +1580,7 @@ if ($text == $datatextbot['text_account']) {
     $dateacc = jdate('Y/m/d');
     $timeacc = jdate('H:i:s', time());
     $first_name = htmlspecialchars($first_name);
-    $Balanceuser = number_format($user['Balance'], 0);
+    $Balanceuser = number_format($user['Balance'], 2);
     $countorder = select("invoice", "id_user", 'id_user', $from_id, "count");
     $text_account = sprintf($textbotlang['users']['account'], $first_name, $from_id, $Balanceuser, $countorder, $user['affiliatescount'], $dateacc, $timeacc);
     sendmessage($from_id, $text_account, $keyboardPanel, 'HTML');
@@ -1715,8 +1715,8 @@ if ($text == $datatextbot['text_sell'] || $datain == "buy" || $text == "/buy") {
     update("user", "Processing_value_tow", $username_ac, "id", $from_id);
     if ($info_product['Volume_constraint'] == 0)
         $info_product['Volume_constraint'] = $textbotlang['users']['stateus']['Unlimited'];
-    $info_product['price_product'] = number_format($info_product['price_product'], 0);
-    $user['Balance'] = number_format($user['Balance']);
+    $info_product['price_product'] = number_format($info_product['price_product'], 2);
+    $user['Balance'] = number_format($user['Balance'],2);
     $textin = sprintf($textbotlang['users']['buy']['invoicebuy'], $username_ac, $info_product['name_product'], $info_product['Service_time'], $info_product['price_product'], $info_product['Volume_constraint'], $user['Balance']);
     sendmessage($from_id, $textin, $payment, 'HTML');
     step('payment', $from_id);
@@ -1922,7 +1922,7 @@ if ($text == $datatextbot['text_sell'] || $datain == "buy" || $text == "/buy") {
     }
     $Balance_prim = $user['Balance'] - $priceproduct;
     update("user", "Balance", $Balance_prim, "id", $from_id);
-    $user['Balance'] = number_format($user['Balance'], 0);
+    $user['Balance'] = number_format($user['Balance'], 2);
     $text_report = sprintf($textbotlang['users']['Report']['reportbuy'], $username_ac, $info_product['price_product'], $info_product['Volume_constraint'], $from_id, $user['number'], $user['Processing_value'], $user['Balance'], $username);
     if (isset($setting['Channel_Report']) && strlen($setting['Channel_Report']) > 0) {
         sendmessage($setting['Channel_Report'], $text_report, null, 'HTML');
@@ -1971,7 +1971,7 @@ if ($text == $datatextbot['text_sell'] || $datain == "buy" || $text == "/buy") {
     $result = ($SellDiscountlimit['price'] / 100) * $info_product['price_product'];
 
     $info_product['price_product'] = $info_product['price_product'] - $result;
-    $info_product['price_product'] = round($info_product['price_product']);
+    $info_product['price_product'] = round($info_product['price_product'],2);
     if ($info_product['price_product'] < 0)
         $info_product['price_product'] = 0;
     $textin = sprintf($textbotlang['users']['buy']['invoicebuy'], $user['Processing_value_tow'], $info_product['name_product'], $info_product['Service_time'], $info_product['price_product'], $info_product['Volume_constraint'], $user['Balance']);
@@ -2004,7 +2004,7 @@ if ($text == $datatextbot['text_Add_Balance'] || $text == "/wallet") {
 } elseif ($user['step'] == "getprice") {
     if (!is_numeric($text))
         return sendmessage($from_id, $textbotlang['users']['Balance']['errorprice'], null, 'HTML');
-    if ($text > 10000000 or $text < 20000)
+    if ($text > 10000 or $text < 10)
         return sendmessage($from_id, $textbotlang['users']['Balance']['errorpricelimit'], null, 'HTML');
     update("user", "Processing_value", $text, "id", $from_id);
     sendmessage($from_id, $textbotlang['users']['Balance']['selectPatment'], $step_payment, 'HTML');
@@ -2027,7 +2027,7 @@ if ($text == $datatextbot['text_Add_Balance'] || $text == "/wallet") {
         step('cart_to_cart_user', $from_id);
     }
     if ($datain == "aqayepardakht") {
-        if ($user['Processing_value'] < 5000) {
+        if ($user['Processing_value'] < 10) {
             sendmessage($from_id, $textbotlang['users']['Balance']['zarinpal'], null, 'HTML');
             return;
         }
@@ -2099,7 +2099,7 @@ if ($text == $datatextbot['text_Add_Balance'] || $text == "/wallet") {
             ]
         ]);
         $Processing_value = number_format($user['Processing_value'], 0);
-        $USD = number_format($USD, 0);
+        $USD = number_format($USD, 2);
         $textnowpayments = sprintf($textbotlang['users']['moeny']['nowpayment'], $randomString, $Processing_value, $USD, $usdprice);
         sendmessage($from_id, $textnowpayments, $paymentkeyboard, 'HTML');
     }

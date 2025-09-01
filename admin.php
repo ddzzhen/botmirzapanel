@@ -1447,7 +1447,7 @@ if ($text == $textbotlang['Admin']['managepanel']['keyboardpanel']['setvolume'])
     sendmessage($from_id, $textbotlang['users']['Extra_volume']['SetPrice'] . $setting['Extra_volume'], $backadmin, 'HTML');
     step('GetPriceExtra', $from_id);
 } elseif ($user['step'] == "GetPriceExtra") {
-    if (!ctype_digit($text)) {
+    if (!is_numeric($text)) {
         sendmessage($from_id, $textbotlang['Admin']['Balance']['Invalidprice'], $backadmin, 'HTML');
         return;
     }

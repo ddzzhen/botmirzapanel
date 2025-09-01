@@ -110,9 +110,11 @@ function tronratee()
 {
     $tronrate = [];
     $requeststron = json_decode(file_get_contents('https://api.diadata.org/v1/assetQuotation/Tron/0x0000000000000000000000000000000000000000'), true);
-    $requestsusd = json_decode(file_get_contents('https://api.wallex.ir/v1/markets'), true);
-    $tronrate['result']['USD'] = intval($requestsusd['result']['symbols']['USDTTMN']['stats']['lastPrice']);
-    $tronrate['result']['TRX'] = intval($requeststron['Price'] * $tronrate['result']['USD']);
+//    $requestsusd = json_decode(file_get_contents('https://api.wallex.ir/v1/markets'), true);
+    $requestsusd = json_decode(file_get_contents('https://latest.currency-api.pages.dev/v1/currencies/cny.min.json'), true);
+//    $tronrate['result']['USD'] = intval($requestsusd['result']['symbols']['USDTTMN']['stats']['lastPrice']);
+    $tronrate['result']['USD'] = number_format(1/number_format($requestsusd['cny']['usd'], 4, '.', ''), 4, '.', '');
+    $tronrate['result']['TRX'] = intval($requeststron['Price'] * (1 / $tronrate['result']['USD']));
     return $tronrate;
 }
 function nowPayments($payment, $price_amount, $order_id, $order_description)

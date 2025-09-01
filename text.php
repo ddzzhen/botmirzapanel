@@ -230,7 +230,7 @@ $textbotlang['users']['buy']['invoicebuy'] = "📇 您的预付款发票:
 👤 用户名: <code>%s</code>
 🔐 服务名称: %s
 📆 有效期: %s 天
-💶 价格: %s  美元
+💶 价格: %s  人民币
 👥 账户流量: %s GB
 💵 您的钱包余额 : %s
     
@@ -276,8 +276,8 @@ $textbotlang['users']['Extra_volume']['VolumeValue'] = "⭕️ 您想购买的�
 ⚠️ 每GB额外流量 %s";
 $textbotlang['users']['Extra_volume']['invoiceExtraVolume'] = "📇 您的额外流量购买发票已创建。
     
-💰 每GB额外流量价格 :  %s  تومان
-📝 您的发票金额 :  %s  تومان
+💰 每GB额外流量价格 :  %s 人民币
+📝 您的发票金额 :  %s 人民币
 📥 请求的额外流量 : %s  GB
 
 ✅ 请点击下面的按钮进行支付,以添加流量.";
@@ -310,16 +310,16 @@ $textbotlang['users']['support']['GetMessageOfUser'] = "📥 收到用户消息,
 📝 消息内容: %s";
 
 
-$textbotlang['users']['Balance']['priceinput'] = "💸 输入金额（以美元为单位）:
-✅ 最多金额为10,000,000美元";
+$textbotlang['users']['Balance']['priceinput'] = "💸 输入金额（以人民币为单位）:
+✅ 最多金额为10,000,000人民币";
 $textbotlang['users']['Balance']['errorprice'] = "❌ 错误 
 💬 请输入数字
 数字请使用拉丁字母输入（键盘切换至英文）";
 $textbotlang['users']['Balance']['errorpricelimit'] = "❌ 错误 
-        💬 金额必须少于1000万美元且大于2万美元";
+        💬 金额必须在10-10000人民币之间";
 $textbotlang['users']['Balance']['selectPatment'] = "💵 选择您的支付方式";
 $textbotlang['users']['Balance']['zarinpal'] = "❌ 错误 
-    此支付网关最低支付金额为5000美元。";
+    此支付网关最低支付金额为10人民币。";
 $textbotlang['users']['Balance']['linkpayments'] = "正在生成支付链接...";
 $textbotlang['users']['Balance']['payments'] = "支付";
 $textbotlang['users']['Balance']['changeto'] = "❌ 错误 
@@ -417,7 +417,7 @@ $textbotlang['users']['stateus']['acceptrequest'] = "📌 拒绝删除请求已�
 $textbotlang['users']['stateus']['acceptrequestnote'] = "✅ 已成功提交";
 $textbotlang['users']['stateus']['rejectsendtouser'] = "❌ 尊敬的用户,您的删除请求未被批准,拒绝原因 : %s";
 $textbotlang['users']['stateus']['getpriceforadd'] = "💰 您希望退还给用户的金额是多少?";
-$textbotlang['users']['stateus']['addedbalanceremove'] = "💰尊敬的用户,金额 %s 美元已添加到您的余额中.";
+$textbotlang['users']['stateus']['addedbalanceremove'] = "💰尊敬的用户,金额 %s 人民币已添加到您的余额中.";
 $textbotlang['users']['stateus']['acceptrequest'] = "✅ 尊敬的用户,您的删除请求已被批准,用户名为  %s .";
 $textbotlang['users']['stateus']['rejectrequest'] = "❌ 删除请求已被批准,请发送拒绝原因.";
 
@@ -430,14 +430,14 @@ $textbotlang['users']['Discount']['correctcode']  = "🤩 您的折扣码正确,
 $textbotlang['users']['Discount']['erorrlimit']  = "❌ 此折扣码的使用限制已到期";
 $textbotlang['users']['Discount']['erorrlimitdiscount']  = "❌ 此赠品码的使用限制已到期";
 $textbotlang['users']['Discount']['firstdiscount']  = "❌ 此折扣码仅限首次购买使用";
-$textbotlang['users']['Discount']['acceptdiscount']  = "赠品码已成功注册,您的余额增加了 %s 美元. 🥳";
+$textbotlang['users']['Discount']['acceptdiscount']  = "赠品码已成功注册,您的余额增加了 %s 人民币. 🥳";
 
 
 
 
 $textbotlang['users']['moeny']['cart_to_Cart_btn'] = "💳 卡到卡";
 $textbotlang['users']['moeny']['nowpaymentbtn'] = "💵 通过nowpayments支付";
-$textbotlang['users']['moeny']['currency_rial_gateway'] = "💎 里亚尔支付";
+$textbotlang['users']['moeny']['currency_rial_gateway'] = "💎 人民币支付";
 $textbotlang['users']['moeny']['mr_payment_gateway'] = "🔵 阿里支付";
 $textbotlang['users']['moeny']['card_number_settings'] = "💳 设置卡号";
 $textbotlang['users']['moeny']['alsat_merchant_settings'] = "设置商户";
@@ -450,7 +450,7 @@ $textbotlang['users']['moeny']['nowpayments_create_link_error'] = "⭕️ 创建
             
 用户ID : %s
 用户名 : @%s";
-$textbotlang['users']['moeny']['carttext'] =  "要手动增加余额,请将金额 %s 美元 转账至以下账户 👇🏻
+$textbotlang['users']['moeny']['carttext'] =  "要手动增加余额,请将金额 %s 人民币 转账至以下账户 👇🏻
     
     ==================== 
     %s
@@ -458,24 +458,24 @@ $textbotlang['users']['moeny']['carttext'] =  "要手动增加余额,请将金�
     
 🌅 此步骤请上传您的转账凭证。 
     
-⚠️ 每次转账金额最多10万美元。
+⚠️ 每次转账金额最多10万人民币。
 ⚠️ 无法从钱包中提取资金。
 ⚠️ 错误转账的责任由您承担.";
 $textbotlang['users']['moeny']['aqayepardakht'] = "
 ✅ 支付发票已创建。
         
 🔢 发票号码 : %s
-💰 发票金额 : %s 美元
+💰 发票金额 : %s 人民币
     
     请使用以下按钮进行支付👇🏻";
 $textbotlang['users']['moeny']['nowpayment']  = "
             ✅ NOWPayments外币支付发票已创建。
         
 🔢 发票号码 : %s
-💰 发票金额 : %s 美元
+💰 发票金额 : %s 人民币
         
-📊 今日美元汇率 : %s 美元
-💵 最终金额:%s 美元 
+📊 今日人民币兑TRX汇率 : %s TRX
+💵 最终金额:%s TRX 
 
 <blockquote>⚠️ 支付后,如果交易金额正确无误,您的余额将在15分钟内自动充值。</blockquote>
         
@@ -488,12 +488,12 @@ $textbotlang['users']['moeny']['iranpay'] = "✅ 您的交易已创建
 🌐 网络: TRX
 💳 钱包地址: <code>%s</code>
 💲 交易金额（TRON）: <code>%s</code>
-💲 交易金额（美元）: <code>%s</code>
+💲 交易金额（人民币）: <code>%s</code>
 💲 TRON 汇率: <code>%s</code>
     
     
     
-📌 金额 %s 美元将在区块链网络确认支付后添加至您的钱包
+📌 金额 %s 人民币将在区块链网络确认支付后添加至您的钱包
     
 💢 请在支付前注意以下事项 👇
     
@@ -517,11 +517,11 @@ $textbotlang['users']['moeny']['cartresid'] = "
 👤 用户ID: %s
 🛒 支付追踪码: %s
 ⚜️ 用户名: @%s
-💸 支付金额: %s 美元
+💸 支付金额: %s 人民币
             
 说明: %s
 ✍️ 如果支付凭证正确,请确认支付";
-$textbotlang['users']['moeny']['Charged.'] = "💎 尊敬的用户,金额 %s 美元 已成功存入您的钱包,感谢您的支付。
+$textbotlang['users']['moeny']['Charged.'] = "💎 尊敬的用户,金额 %s 人民币 已成功存入您的钱包,感谢您的支付。
                 
 🛒 您的追踪码: %s";
 $textbotlang['users']['moeny']['acceptedcart'] = "订单已确认";
@@ -547,7 +547,7 @@ $textbotlang['users']['moeny']['payment_success_dec'] = "感谢您的交易";
 $textbotlang['users']['moeny']['invoice_title'] = "支付发票";
 $textbotlang['users']['moeny']['transaction_number'] = "交易编号 : ";
 $textbotlang['users']['moeny']['payment_amount'] = "支付金额 :";
-$textbotlang['users']['moeny']['currency'] = "美元";
+$textbotlang['users']['moeny']['currency'] = "人民币";
 $textbotlang['users']['moeny']['date_label'] = "日期 : ";
 $textbotlang['users']['moeny']['back_to_bot'] = "返回机器人";
 $textbotlang['users']['moeny']['setting'] = "⚙️ 设置";
@@ -595,7 +595,7 @@ $textbotlang['users']['account']  = "
             
 👤 姓名: %s
 🕴🏻 用户名: <code>%s</code>
-💰 余额: %s 美元
+💰 余额: %s 人民币
 🛍 已购服务数量 : %s
 🤝 您的下线人数 : %s 人
     
@@ -604,7 +604,7 @@ $textbotlang['users']['accountbtn'] = "👨🏻‍💻 账户信息";
 $textbotlang['users']['buybtn'] = "🔐 购买订阅";
 $textbotlang['users']['add_balance'] = "💰 增加余额";
 $textbotlang['users']['Percentage'] = " 百分比 ";
-$textbotlang['users']['IRT'] = " 美元 ";
+$textbotlang['users']['IRT'] = " 人民币 ";
 $textbotlang['users']['botoff'] =  "❌ 机器人已关闭,请稍后再试";
 $textbotlang['users']['pricelist'] = "💰 订阅费用表";
 
@@ -625,7 +625,7 @@ $textbotlang['users']['affiliates']['affiliateseduser'] = "❌ 您已经是某�
 $textbotlang['users']['affiliates']['giftuser'] = "🎁 %s 元已从您的下线 %s 处添加到您的余额中.";
 $textbotlang['users']['affiliates']['porsantuser'] = "🎁 佣金支付 
     
-金额 %s 美元 已通过您的下线支付到您的钱包中";
+金额 %s 人民币 已通过您的下线支付到您的钱包中";
 $textbotlang['users']['affiliates']['btn'] = "👥 下线推广";
 $textbotlang['users']['affiliates']['infotext'] = "🤔 下线推广是如何运作的？
     
@@ -670,7 +670,7 @@ $textbotlang['Admin']['login-admin'] = "
 ❓ 指南 : 
 1 - 要添加面板,请点击面板按钮,然后点击添加面板按钮。
 2- 在财务按钮中,您可以设置网关和商户。
-3- 里亚尔支付网关只需设置nowpayments的api,其他钱包设置请在nowpayments网站内进行";
+3- 人民币支付网关只需设置nowpayments的api,其他钱包设置请在nowpayments网站内进行";
 $textbotlang['Admin']['Back-Admin'] = "返回管理员面板!";
 $textbotlang['Admin']['Back-Adminment'] = "🏠 返回管理菜单";
 $textbotlang['Admin']['Addedadmin'] = "👨‍💻 添加管理员";
@@ -701,7 +701,7 @@ $textbotlang['Admin']['Statistics']['info'] = "
 📌 机器人延迟  : %s
 📌 测试账户总数 : %s 个
 📌 总销售数量 : %s 个
-📌 总销售额 : %s 美元
+📌 总销售额 : %s 人民币
 📌 昨日销售数量 : %s 个
 📌 面板数量 : %s 个";
 
@@ -928,7 +928,7 @@ $textbotlang['Admin']['ManageUser']['Datails'] = "
 👤 订阅用户名 :  <code>%s</code> 
 📍 服务位置 :  %s
 🛍 产品名称 :  %s
-💰 服务支付金额 :  %s 美元
+💰 服务支付金额 :  %s 人民币
 ⚜️ 购买的服务流量 : %s
 ⏳ 购买的服务时长 : %s 天
 📆 购买日期 : %s";
@@ -1087,7 +1087,7 @@ $textbotlang['Admin']['Product']['InvalidTime'] = "时长无效";
 $textbotlang['Admin']['Product']['GetPrice'] = "
 请发送订阅价格.
 注意: 
-产品价格以美元为单位,请勿添加任何额外字符.";
+产品价格以人民币为单位,请勿添加任何额外字符.";
 $textbotlang['Admin']['Product']['InvalidPrice'] = "价格无效";
 $textbotlang['Admin']['Product']['SaveProduct'] = "产品已成功保存 🥳🎉";
 $textbotlang['Admin']['Product']['TimeUpdated'] = "✅ 产品时间已更新";
@@ -1127,15 +1127,15 @@ $textbotlang['Admin']['Usertest']['TimeUpdated'] = "✅ 测试服务时间已更
 $textbotlang['Admin']['Usertest']['VolumeUpdated'] = "✅ 测试服务流量已更新";
 
 
-$textbotlang['Admin']['Balance']['PriceBalance'] = "用户ID已接收,请发送您希望添加的金额,单位为美元";
-$textbotlang['Admin']['Balance']['PriceBalancek'] = "用户ID已接收,请发送您希望扣除的金额,单位为美元";
+$textbotlang['Admin']['Balance']['PriceBalance'] = "用户ID已接收,请发送您希望添加的金额,单位为人民币";
+$textbotlang['Admin']['Balance']['PriceBalancek'] = "用户ID已接收,请发送您希望扣除的金额,单位为人民币";
 $textbotlang['Admin']['Balance']['Invalidprice'] = "金额无效";
 $textbotlang['Admin']['Balance']['AddBalanceUser'] = "✅ 金额已添加至用户余额";
 $textbotlang['Admin']['Balance']['NegativeBalanceUser'] = "✅ 金额已从用户余额中扣除";
 $textbotlang['Admin']['Balance']['addallbalance'] = "📌 发送要批量充值的金额";
-$textbotlang['Admin']['Balance']['maxpricebalance'] = "最多1000万美元";
-$textbotlang['Admin']['Balance']['AddedBalance'] = "💎 尊敬的用户,金额 %s 美元 已成功存入您的钱包.";
-$textbotlang['Admin']['Balance']['ReduceBalance'] = "❌ 尊敬的用户,金额 %s 美元 已从您的钱包中扣除.";
+$textbotlang['Admin']['Balance']['maxpricebalance'] = "最多1000万人民币";
+$textbotlang['Admin']['Balance']['AddedBalance'] = "💎 尊敬的用户,金额 %s 人民币 已成功存入您的钱包.";
+$textbotlang['Admin']['Balance']['ReduceBalance'] = "❌ 尊敬的用户,金额 %s 人民币 已从您的钱包中扣除.";
 $textbotlang['Admin']['Balance']['SendBalanceAll'] = "👥 批量充值";
 
 
